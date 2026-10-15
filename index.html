@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <title>IPO Chart Maker</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=swap"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <h1>IPO Chart Maker</h1>
+        <p>
+          Fill in the input, process and output. The chart updates as you type.
+          Copy it as an image and paste it into your document or slides.
+        </p>
+      </header>
+
+      <div class="grid">
+        <form id="form" onsubmit="return false;">
+          <div class="field">
+            <label for="inp">Input</label>
+            <textarea id="inp">
+Customer's order details: items, quantities, and shipping address</textarea
+            >
+          </div>
+          <div class="field">
+            <label for="proc">Process</label>
+            <textarea id="proc">
+Check stock, calculate the total with tax, charge the card, and create a shipping label</textarea
+            >
+          </div>
+          <div class="field">
+            <label for="out">Output</label>
+            <textarea id="out">
+Order confirmation email and a packing slip</textarea
+            >
+          </div>
+          <label class="toggle" for="heads"
+            ><input type="checkbox" id="heads" checked /> Show Input / Process /
+            Output headings</label
+          >
+          <p class="note">
+            The text above is an example. Replace it with your own. Text wraps
+            and shrinks to fit each box.
+          </p>
+        </form>
+
+        <section class="preview" aria-label="Chart preview">
+          <div class="stage">
+            <img
+              id="img"
+              alt="IPO chart with Input, Process and Output boxes joined by arrows"
+            />
+          </div>
+          <div class="actions">
+            <button type="button" id="copy">Copy image</button>
+            <span id="status" role="status" aria-live="polite"></span>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
